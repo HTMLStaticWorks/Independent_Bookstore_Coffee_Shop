@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Community | Sip & Scroll</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        amber: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 antialiased transition-colors duration-300">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 h-[70px] flex items-center">
+        <div class="container mx-auto px-4 md:px-6 w-full flex justify-between items-center">
+            
+            <a href="index.html" class="flex items-center gap-2 group">
+                <i class="fa-solid fa-book-open text-amber-600 text-2xl group-hover:text-amber-700 transition-colors"></i>
+                <span class="font-heading text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Sip & Scroll</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden xl:flex items-center">
+                <div class="relative group flex items-center py-2 -my-2">
+                    <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium flex items-center gap-[6px]">
+                        Home <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-[100%] pt-2 w-48 left-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div class="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-700 rounded-md shadow-xl py-2 flex flex-col">
+                            <a href="index.html" class="px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 transition-colors">Home 1 (Classic)</a>
+                            <a href="home-2.html" class="px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 transition-colors">Home 2 (Promo)</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">About Us</a>
+                <a href="services.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Services</a>
+                <a href="bookshop.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Bookshop</a>
+                <a href="menu.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Cafe Menu</a>
+                <a href="events.html" class="nav-link text-amber-600 dark:text-amber-400 font-semibold">Events</a>
+                <a href="dashboard.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Dashboard</a>
+        </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <button onclick="toggleTheme()" class="text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                    <i class="fa-solid fa-moon dark:hidden text-lg"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-lg"></i>
+                </button>
+                <div class="hidden xl:flex gap-3 ml-4">
+                    <a href="signup.html" class="bg-amber-600 hover:bg-amber-700 text-white font-medium text-sm px-4 h-10 flex items-center justify-center rounded-md transition-colors shadow-sm">Sign Up</a>
+                </div>
+                
+                <button onclick="toggleMobileMenu()" class="xl:hidden text-gray-600 dark:text-gray-300 p-2 text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-overlay" class="hidden fixed inset-0 bg-black/50 z-40 transition-opacity" onclick="toggleMobileMenu()"></div>
+    
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-900 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl overflow-y-auto">
+        <div class="p-6 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <i class="fa-solid fa-book-open text-amber-600 text-xl group-hover:text-amber-700"></i>
+                <span class="font-heading text-xl font-bold text-gray-900 dark:text-white">Sip & Scroll</span>
+            </a>
+            <button onclick="toggleMobileMenu()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 focus:outline-none">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+        <nav class="p-4 flex flex-col space-y-2">
+            <details class="group">
+                <summary class="nav-link flex justify-between items-center px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    Home <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-open:rotate-180"></i>
+                </summary>
+                <div class="pl-4 pr-2 py-1 space-y-1 mt-1">
+                    <a href="index.html" class="block px-4 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 transition-colors text-sm">Home 1 (Classic)</a>
+                    <a href="home-2.html" class="block px-4 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 transition-colors text-sm">Home 2 (Promo)</a>
+                </div>
+            </details>
+            <a href="about.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">About Us</a>
+            <a href="services.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Services</a>
+            <a href="bookshop.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Bookshop</a>
+            <a href="menu.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Cafe Menu</a>
+            <a href="events.html" class="nav-link block px-4 py-3 rounded-md text-amber-600 bg-amber-50 dark:bg-gray-800 font-semibold transition-colors">Events & Community</a>
+            <a href="dashboard.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Dashboard</a>
+            <div class="h-px bg-gray-200 dark:bg-gray-800 my-4 mx-4"></div>
+            <a href="signup.html" class="block mx-4 py-3 bg-amber-600 hover:bg-amber-700 text-white font-medium text-center rounded-md transition-colors shadow-sm">Sign Up</a>
+            
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-[70px]">
+        
+        <!-- Header Section -->
+        <section class="relative text-white py-20 md:py-32 overflow-hidden border-b border-gray-200 dark:border-gray-800">
+            <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: url('https://images.unsplash.com/photo-1511882150382-421056c89033?q=80&w=2000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div>
+            <div class="absolute inset-0 z-0 bg-black/60 pointer-events-none"></div>
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Gather & Grow</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+                    From intimate author readings to lively open mic nights, discover what's happening this month at Sip & Scroll.
+                </p>
+            </div>
+        </section>
+
+        <!-- Events Calendar/List -->
+        <section class="py-20 bg-gray-50 dark:bg-gray-900 min-h-screen">
+            <div class="container mx-auto px-4 max-w-4xl">
+                
+                <div class="flex justify-between items-end mb-12 border-b border-gray-200 dark:border-gray-800 pb-4">
+                    <h2 class="font-heading text-3xl font-bold text-gray-900 dark:text-white">Upcoming Events</h2>
+                    <div class="flex gap-2">
+                        <select class="px-3 py-1.5 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300 focus:ring-amber-500 focus:border-amber-500">
+                            <option>All Types</option>
+                            <option>Author Readings</option>
+                            <option>Book Clubs</option>
+                            <option>Open Mic</option>
+                            <option>Workshops</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    
+                    <!-- Event 1 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover-lift hover:shadow-lg transition-all flex flex-col md:flex-row">
+                        <div class="md:w-1/3 h-48 md:h-auto relative">
+                            <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-white dark:bg-gray-900 text-center rounded-lg shadow-md overflow-hidden border border-gray-100 dark:border-gray-700">
+                                <div class="bg-red-600 text-white text-xs font-bold uppercase py-1 px-3">Nov</div>
+                                <div class="text-2xl font-bold text-gray-900 dark:text-white px-3 py-1">12</div>
+                            </div>
+                        </div>
+                        <div class="p-5 md:p-6 md:w-2/3 flex flex-col justify-center">
+                            <div class="flex items-center gap-2 text-amber-600 dark:text-amber-400 text-sm font-bold uppercase tracking-wider mb-1">
+                                <i class="fa-solid fa-microphone"></i> Author Reading
+                            </div>
+                            <h3 class="font-heading text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">Midnight Library: Book Chat</h3>
+                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-3 flex items-center gap-4">
+                                <span><i class="fa-regular fa-clock mr-1"></i> 7:00 PM - 9:00 PM</span>
+                                <span><i class="fa-solid fa-ticket mr-1"></i> $5 (Includes drip coffee)</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm md:text-base">
+                                Join us for our monthly fiction book club. This month we're diving into Matt Haig's bestseller. Come prepared with questions!
+                            </p>
+                            <div class="mt-auto flex flex-wrap gap-3">
+                                <a href="#rsvpForm" class="px-5 py-2 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded shadow-sm transition text-sm">RSVP Now</a>
+                                <button class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-50 dark:hover:bg-gray-700 transition text-sm">Share <i class="fa-solid fa-share-nodes ml-1"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover-lift hover:shadow-lg transition-all flex flex-col md:flex-row">
+                        <div class="md:w-1/3 h-48 md:h-auto relative">
+                            <img src="https://images.unsplash.com/photo-1478147427282-58a87a120781?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-white dark:bg-gray-900 text-center rounded-lg shadow-md overflow-hidden border border-gray-100 dark:border-gray-700">
+                                <div class="bg-red-600 text-white text-xs font-bold uppercase py-1 px-3">Nov</div>
+                                <div class="text-2xl font-bold text-gray-900 dark:text-white px-3 py-1">18</div>
+                            </div>
+                        </div>
+                        <div class="p-5 md:p-6 md:w-2/3 flex flex-col justify-center">
+                            <div class="flex items-center gap-2 text-teal-600 dark:text-teal-400 text-sm font-bold uppercase tracking-wider mb-1">
+                                <i class="fa-solid fa-music"></i> Open Mic
+                            </div>
+                            <h3 class="font-heading text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">Acoustic & Poetry Night</h3>
+                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-3 flex items-center gap-4">
+                                <span><i class="fa-regular fa-clock mr-1"></i> 8:00 PM - 10:00 PM</span>
+                                <span><i class="fa-solid fa-ticket mr-1"></i> Free Entry</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm md:text-base">
+                                Calling all local poets, songwriters, and storytellers. Signups begin at 7:30 PM. Half-price pastries for performers!
+                            </p>
+                            <div class="mt-auto flex flex-wrap gap-3">
+                                <a href="#rsvpForm" class="px-5 py-2 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded shadow-sm transition text-sm">RSVP Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover-lift hover:shadow-lg transition-all flex flex-col md:flex-row">
+                        <div class="md:w-1/3 h-48 md:h-auto relative">
+                            <img src="assets/images/event_nanowrimo.png" alt="NaNoWriMo Wrap-up Party" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-white dark:bg-gray-900 text-center rounded-lg shadow-md overflow-hidden border border-gray-100 dark:border-gray-700">
+                                <div class="bg-red-600 text-white text-xs font-bold uppercase py-1 px-3">Nov</div>
+                                <div class="text-2xl font-bold text-gray-900 dark:text-white px-3 py-1">25</div>
+                            </div>
+                        </div>
+                        <div class="p-5 md:p-6 md:w-2/3 flex flex-col justify-center">
+                            <div class="flex items-center gap-2 text-blue-600 dark:text-blue-400 text-sm font-bold uppercase tracking-wider mb-1">
+                                <i class="fa-solid fa-pen-nib"></i> Workshop
+                            </div>
+                            <h3 class="font-heading text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">NaNoWriMo Wrap-up Party</h3>
+                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-3 flex items-center gap-4">
+                                <span><i class="fa-regular fa-clock mr-1"></i> 6:00 PM - 8:00 PM</span>
+                                <span><i class="fa-solid fa-ticket mr-1"></i> Free Entry</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm md:text-base">
+                                Celebrate the end of National Novel Writing Month with fellow writers. We'll share excerpts, talk about editing, and enjoy some well-deserved lattes.
+                            </p>
+                            <div class="mt-auto flex flex-wrap gap-3">
+                                <a href="#rsvpForm" class="px-5 py-2 border border-gray-300 dark:border-gray-600 hover:border-amber-600 hover:text-amber-600 text-gray-800 dark:text-gray-200 font-bold rounded shadow-sm transition text-center whitespace-nowrap text-sm">Join Waitlist</a>
+                                <span class="flex items-center text-red-500 text-sm font-bold"><i class="fa-solid fa-fire mr-1"></i> Almost Full</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Form Section (RSVP) -->
+        <section id="rsvpForm" class="py-20 bg-amber-50 dark:bg-gray-800 border-t border-amber-100 dark:border-gray-700">
+            <div class="container mx-auto px-4 max-w-3xl">
+                <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden p-8 md:p-10">
+                    <div class="text-center mb-8">
+                        <i class="fa-solid fa-ticket text-4xl text-amber-600 mb-4"></i>
+                        <h3 class="font-heading text-3xl font-bold text-gray-900 dark:text-white mb-2">Secure Your Spot</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Reserve your ticket for an upcoming event.</p>
+                    </div>
+                    
+                    <form class="space-y-6">
+                        
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Select Event</label>
+                            <select class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-gray-900 dark:text-white shadow-sm transition">
+                                <option value="" disabled selected>Choose an event...</option>
+                                <option value="bookclub">Nov 12 - Midnight Library: Book Chat</option>
+                                <option value="openmic">Nov 18 - Acoustic & Poetry Night</option>
+                                <option value="nanowrimo">Nov 25 - NaNoWriMo Wrap-up Party (Waitlist)</option>
+                            </select>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-gray-900 dark:text-white shadow-sm transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-gray-900 dark:text-white shadow-sm transition">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Email Address</label>
+                                <input type="email" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-gray-900 dark:text-white shadow-sm transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Number of Tickets</label>
+                                <input type="number" min="1" max="4" value="1" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-gray-900 dark:text-white shadow-sm transition">
+                            </div>
+                        </div>
+
+                        <button type="button" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-6 rounded-md shadow-lg transition-transform hover:-translate-y-1 mt-4 text-lg">
+                            Confirm RSVP
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer - Global -->
+    <footer class="bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-300 pt-16 pb-8 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand Info -->
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-6 group inline-block">
+                        <i class="fa-solid fa-book-open text-amber-600 text-2xl group-hover:text-amber-700 transition-colors"></i>
+                        <span class="font-heading text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Sip & Scroll</span>
+                    </a>
+                    <p class="text-gray-500 dark:text-gray-400 mb-6 text-sm leading-relaxed font-medium">
+                        An independent haven for book lovers and coffee enthusiasts. Stay awhile, read a chapter, and sip slowly.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-gray-900 dark:text-white text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="about.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block text-gray-500 dark:text-gray-400">Our Story</a></li>
+                        <li><a href="bookshop.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block text-gray-500 dark:text-gray-400">Shop Books</a></li>
+                        <li><a href="menu.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block text-gray-500 dark:text-gray-400">Cafe Menu</a></li>
+                        <li><a href="events.html" class="text-amber-600 font-semibold block">Upcoming Events</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block text-gray-500 dark:text-gray-400">Space Rental</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Hours -->
+                <div>
+                    <h4 class="font-heading font-bold text-gray-900 dark:text-white text-lg mb-6">Visit Us</h4>
+                    <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-amber-600"></i>
+                            <span>123 Literary Lane<br>Booktown, BK 10012</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-amber-600"></i>
+                            <a href="tel:5551234567" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">(555) 123-4567</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-amber-600"></i>
+                            <a href="mailto:hello@sipandscroll.com" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">hello@sipandscroll.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="font-heading font-bold text-gray-900 dark:text-white text-lg mb-6">Newsletter</h4>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 font-medium">Subscribe for event updates, staff picks, and exclusive discounts.</p>
+                    <form class="flex flex-col gap-3">
+                        <input type="email" placeholder="Your email address" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md text-gray-900 dark:text-white focus:outline-none focus:border-amber-600 focus:ring-1 focus:ring-amber-600 transition-colors shadow-inner" required>
+                        <button type="submit" class="w-full px-4 h-12 flex items-center justify-center bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-md transition-colors shadow-sm">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-400 font-medium">
+                <p>&copy; 2026 Sip & Scroll. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Javascript -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Menu | Sip & Scroll</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        amber: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 antialiased transition-colors duration-300">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 h-[70px] flex items-center">
+        <div class="container mx-auto px-4 md:px-6 w-full flex justify-between items-center">
+            
+            <a href="index.html" class="flex items-center gap-2 group">
+                <i class="fa-solid fa-book-open text-amber-600 text-2xl group-hover:text-amber-700 transition-colors"></i>
+                <span class="font-heading text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Sip & Scroll</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden xl:flex items-center">
+                <div class="relative group flex items-center py-2 -my-2">
+                    <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium flex items-center gap-[6px]">
+                        Home <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-[100%] pt-2 w-48 left-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div class="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-700 rounded-md shadow-xl py-2 flex flex-col">
+                            <a href="index.html" class="px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 transition-colors">Home 1 (Classic)</a>
+                            <a href="home-2.html" class="px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 transition-colors">Home 2 (Promo)</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">About Us</a>
+                <a href="services.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Services</a>
+                <a href="bookshop.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Bookshop</a>
+                <a href="menu.html" class="nav-link text-amber-600 dark:text-amber-400 font-semibold">Cafe Menu</a>
+                <a href="events.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Events</a>
+                <a href="dashboard.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Dashboard</a>
+        </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <button onclick="toggleTheme()" class="text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                    <i class="fa-solid fa-moon dark:hidden text-lg"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-lg"></i>
+                </button>
+                <div class="hidden xl:flex gap-3 ml-4">
+                    <a href="signup.html" class="bg-amber-600 hover:bg-amber-700 text-white font-medium text-sm px-4 h-10 flex items-center justify-center rounded-md transition-colors shadow-sm">Sign Up</a>
+                </div>
+                
+                <button onclick="toggleMobileMenu()" class="xl:hidden text-gray-600 dark:text-gray-300 p-2 text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-overlay" class="hidden fixed inset-0 bg-black/50 z-40 transition-opacity" onclick="toggleMobileMenu()"></div>
+    
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-900 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl overflow-y-auto">
+        <div class="p-6 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <i class="fa-solid fa-book-open text-amber-600 text-xl group-hover:text-amber-700"></i>
+                <span class="font-heading text-xl font-bold text-gray-900 dark:text-white">Sip & Scroll</span>
+            </a>
+            <button onclick="toggleMobileMenu()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 focus:outline-none">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+        <nav class="p-4 flex flex-col space-y-2">
+            <details class="group">
+                <summary class="nav-link flex justify-between items-center px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    Home <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-open:rotate-180"></i>
+                </summary>
+                <div class="pl-4 pr-2 py-1 space-y-1 mt-1">
+                    <a href="index.html" class="block px-4 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 transition-colors text-sm">Home 1 (Classic)</a>
+                    <a href="home-2.html" class="block px-4 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 transition-colors text-sm">Home 2 (Promo)</a>
+                </div>
+            </details>
+            <a href="about.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">About Us</a>
+            <a href="services.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Services</a>
+            <a href="bookshop.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Bookshop</a>
+            <a href="menu.html" class="nav-link block px-4 py-3 rounded-md text-amber-600 bg-amber-50 dark:bg-gray-800 font-semibold transition-colors">Cafe Menu</a>
+            <a href="events.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Events & Community</a>
+            <a href="dashboard.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Dashboard</a>
+            <div class="h-px bg-gray-200 dark:bg-gray-800 my-4 mx-4"></div>
+            <a href="signup.html" class="block mx-4 py-3 bg-amber-600 hover:bg-amber-700 text-white font-medium text-center rounded-md transition-colors shadow-sm">Sign Up</a>
+            
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-[70px]">
+        
+        <!-- Seasonal Special Spotlight -->
+        <section class="relative py-16 md:py-24 px-4 overflow-hidden border-b border-gray-200 dark:border-gray-800 text-white">
+            <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: url('https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=1200&auto=format&fit=crop'); background-size: cover; background-position: center;"></div>
+            <div class="absolute inset-0 z-0 bg-black/60 pointer-events-none"></div>
+            
+            <div class="container mx-auto max-w-5xl relative z-10">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="w-full md:w-1/2">
+                        <div class="inline-block bg-amber-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6">Seasonal Special</div>
+                        <h1 class="font-heading text-4xl md:text-6xl font-bold mb-6">The Authors' Autumn Blend</h1>
+                        <p class="text-amber-100 text-lg md:text-xl mb-8 leading-relaxed max-w-lg">
+                            A cozy mix of our house espresso, maple syrup, toasted cinnamon, and oat milk. Perfect for warming your hands while turning pages on a crisp afternoon.
+                        </p>
+                        <p class="text-3xl font-bold font-heading">$5.50</p>
+                    </div>
+                    <div class="w-full md:w-1/2 flex justify-center">
+                        <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-amber-700 p-2 overflow-hidden shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?q=80&w=800&auto=format&fit=crop" alt="Autumn Blend Coffee" class="w-full h-full object-cover rounded-full transform hover:scale-105 transition duration-700 cursor-pointer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Navigation -->
+        <div class="sticky top-[70px] z-40 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shadow-sm transition-colors duration-300">
+            <div class="container mx-auto px-4 max-w-5xl">
+                <ul class="flex overflow-x-auto hide-scrollbar text-sm font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 gap-8">
+                    <li><a href="#coffee" class="block py-4 hover:text-amber-600 dark:hover:text-amber-400 border-b-2 border-transparent hover:border-amber-600 whitespace-nowrap transition-colors">Coffee (Hot & Iced)</a></li>
+                    <li><a href="#tea" class="block py-4 hover:text-amber-600 dark:hover:text-amber-400 border-b-2 border-transparent hover:border-amber-600 whitespace-nowrap transition-colors">Tea & Alternatives</a></li>
+                    <li><a href="#pastries" class="block py-4 hover:text-amber-600 dark:hover:text-amber-400 border-b-2 border-transparent hover:border-amber-600 whitespace-nowrap transition-colors">Pastries & Light Bites</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Menu Categories -->
+        <section class="py-16 md:py-20 bg-gray-50 dark:bg-gray-900">
+            <div class="container mx-auto px-4 max-w-5xl">
+                
+                <!-- Category: Coffee -->
+                <div id="coffee" class="mb-20 scroll-mt-[150px]">
+                    <div class="flex items-center gap-4 mb-10">
+                        <h2 class="font-heading text-3xl font-bold text-gray-900 dark:text-white">Coffee</h2>
+                        <div class="h-px bg-gray-300 dark:bg-gray-700 flex-grow"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                        <!-- Menu Item -->
+                        <div class="flex justify-between items-start border-b border-gray-200 dark:border-gray-800 pb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-gray-900 dark:text-white">Drip Coffee</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Our signature rotating single-origin roast.</p>
+                                <span class="inline-block mt-2 text-xs font-bold text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/30 px-2 py-1 rounded">V</span>
+                            </div>
+                            <span class="font-heading font-bold text-gray-900 dark:text-white whitespace-nowrap ml-4">$3.00</span>
+                        </div>
+                        <!-- Menu Item -->
+                        <div class="flex justify-between items-start border-b border-gray-200 dark:border-gray-800 pb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-gray-900 dark:text-white">Latte (Hot/Iced)</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Espresso and steamed milk with a light layer of foam.</p>
+                                <div class="flex gap-2 mt-2">
+                                    <span class="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/30 px-2 py-1 rounded">GF</span>
+                                    <span class="inline-block text-xs font-bold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded text-amber-600 dark:text-amber-400">Available Iced</span>
+                                </div>
+                            </div>
+                            <span class="font-heading font-bold text-gray-900 dark:text-white whitespace-nowrap ml-4">$4.50</span>
+                        </div>
+                        <!-- Menu Item -->
+                        <div class="flex justify-between items-start border-b border-gray-200 dark:border-gray-800 pb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-gray-900 dark:text-white">Cortado</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Equal parts espresso and steamed milk.</p>
+                            </div>
+                            <span class="font-heading font-bold text-gray-900 dark:text-white whitespace-nowrap ml-4">$3.75</span>
+                        </div>
+                        <!-- Menu Item -->
+                        <div class="flex justify-between items-start border-b border-gray-200 dark:border-gray-800 pb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-gray-900 dark:text-white">Cold Brew</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Slow-steeped for 24 hours. Smooth and bold.</p>
+                                <span class="inline-block mt-2 text-xs font-bold text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/30 px-2 py-1 rounded">V</span>
+                            </div>
+                            <span class="font-heading font-bold text-gray-900 dark:text-white whitespace-nowrap ml-4">$4.00</span>
+                        </div>
+                        <!-- Menu Item -->
+                        <div class="flex justify-between items-start border-b border-gray-200 dark:border-gray-800 pb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-gray-900 dark:text-white">Pour Over</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Ask our baristas about today's featured bean.</p>
+                            </div>
+                            <span class="font-heading font-bold text-gray-900 dark:text-white whitespace-nowrap ml-4">$4.50+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Tea & Alternatives -->
+                <div id="tea" class="mb-20 scroll-mt-[150px]">
+                    <div class="flex items-center gap-4 mb-10">
+                        <h2 class="font-heading text-3xl font-bold text-gray-900 dark:text-white">Tea & Alternatives</h2>
+                        <div class="h-px bg-gray-300 dark:bg-gray-700 flex-grow"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                        <!-- Menu Item -->
+                        <div class="flex justify-between items-start border-b border-gray-200 dark:border-gray-800 pb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-gray-900 dark:text-white">Loose Leaf Teas</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Earl Grey, English Breakfast, Peppermint, Chamomile, Jasmine Green.</p>
+                            </div>
+                            <span class="font-heading font-bold text-gray-900 dark:text-white whitespace-nowrap ml-4">$3.50</span>
+                        </div>
+                        <!-- Menu Item -->
+                        <div class="flex justify-between items-start border-b border-gray-200 dark:border-gray-800 pb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-gray-900 dark:text-white">Matcha Latte</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Ceremonial grade matcha whisked with steamed milk.</p>
+                                <span class="inline-block mt-2 text-xs font-bold text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/30 px-2 py-1 rounded">GF</span>
+                            </div>
+                            <span class="font-heading font-bold text-gray-900 dark:text-white whitespace-nowrap ml-4">$5.00</span>
+                        </div>
+                        <!-- Menu Item -->
+                        <div class="flex justify-between items-start border-b border-gray-200 dark:border-gray-800 pb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-gray-900 dark:text-white">Chai Tea Latte</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Spiced black tea blend with steamed milk.</p>
+                            </div>
+                            <span class="font-heading font-bold text-gray-900 dark:text-white whitespace-nowrap ml-4">$4.50</span>
+                        </div>
+                        <!-- Menu Item -->
+                        <div class="flex justify-between items-start border-b border-gray-200 dark:border-gray-800 pb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-gray-900 dark:text-white">Hot Chocolate</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Rich cocoa melted into steamed milk, topped with whipped cream.</p>
+                            </div>
+                            <span class="font-heading font-bold text-gray-900 dark:text-white whitespace-nowrap ml-4">$4.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Pastries & Light Bites -->
+                <div id="pastries" class="mb-20 scroll-mt-[150px]">
+                    <div class="flex items-center gap-4 mb-10">
+                        <h2 class="font-heading text-3xl font-bold text-gray-900 dark:text-white">Pastries & Light Bites</h2>
+                        <div class="h-px bg-gray-300 dark:bg-gray-700 flex-grow"></div>
+                    </div>
+
+                    <!-- Images grid for pastries -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                        <img src="assets/images/pastry_croissant.png" alt="Butter Croissant" class="w-full h-32 object-cover rounded-xl shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=400&auto=format&fit=crop" alt="Rustic Bread" class="w-full h-32 object-cover rounded-xl shadow-sm">
+                        <img src="assets/images/pastry_lemon_loaf.png" alt="Lemon Loaf Cake" class="hidden md:block w-full h-32 object-cover rounded-xl shadow-sm">
+                        <img src="assets/images/pastry_avocado_toast.png" alt="Avocado Toast" class="hidden md:block w-full h-32 object-cover rounded-xl shadow-sm">
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                        <!-- Menu Item -->
+                        <div class="flex justify-between items-start border-b border-gray-200 dark:border-gray-800 pb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-gray-900 dark:text-white">Butter Croissant</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Flaky, buttery, and baked fresh daily.</p>
+                            </div>
+                            <span class="font-heading font-bold text-gray-900 dark:text-white whitespace-nowrap ml-4">$3.50</span>
+                        </div>
+                        <!-- Menu Item -->
+                        <div class="flex justify-between items-start border-b border-gray-200 dark:border-gray-800 pb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-gray-900 dark:text-white">Blueberry Muffin</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Loaded with wild blueberries and topped with streusel.</p>
+                            </div>
+                            <span class="font-heading font-bold text-gray-900 dark:text-white whitespace-nowrap ml-4">$3.75</span>
+                        </div>
+                        <!-- Menu Item -->
+                        <div class="flex justify-between items-start border-b border-gray-200 dark:border-gray-800 pb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-gray-900 dark:text-white">Vegan Lemon Loaf</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Tangy and sweet with a zesty lemon glaze.</p>
+                                <div class="flex gap-2 mt-2">
+                                    <span class="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/30 px-2 py-1 rounded">V</span>
+                                    <span class="inline-block text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/30 px-2 py-1 rounded">DF</span>
+                                </div>
+                            </div>
+                            <span class="font-heading font-bold text-gray-900 dark:text-white whitespace-nowrap ml-4">$4.00</span>
+                        </div>
+                        <!-- Menu Item -->
+                        <div class="flex justify-between items-start border-b border-gray-200 dark:border-gray-800 pb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-gray-900 dark:text-white">Avocado Toast</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Sourdough slice with mashed avocado, olive oil, sea salt, and red pepper flakes.</p>
+                                <span class="inline-block mt-2 text-xs font-bold text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/30 px-2 py-1 rounded">V</span>
+                            </div>
+                            <span class="font-heading font-bold text-gray-900 dark:text-white whitespace-nowrap ml-4">$7.50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customization Options -->
+                <div class="bg-amber-50 dark:bg-gray-800 p-6 md:p-8 rounded-xl border border-amber-100 dark:border-gray-700">
+                    <h3 class="font-heading text-xl font-bold text-gray-900 dark:text-white mb-4">Milks & Add-ins</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-sm">
+                        <div>
+                            <span class="font-bold text-gray-800 dark:text-gray-200 block mb-2">Alternative Milks (+$0.75)</span>
+                            <ul class="text-gray-600 dark:text-gray-400 space-y-1">
+                                <li>Oat Milk</li>
+                                <li>Almond Milk</li>
+                                <li>Soy Milk</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="font-bold text-gray-800 dark:text-gray-200 block mb-2">House Syrups (+$0.50)</span>
+                            <ul class="text-gray-600 dark:text-gray-400 space-y-1">
+                                <li>Vanilla</li>
+                                <li>Caramel</li>
+                                <li>Hazelnut</li>
+                                <li>Lavender</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="font-bold text-gray-800 dark:text-gray-200 block mb-2">Extras</span>
+                            <ul class="text-gray-600 dark:text-gray-400 space-y-1">
+                                <li>Extra Espresso Shot (+$1.00)</li>
+                                <li>Cold Foam (+$1.00)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer - Global -->
+    <footer class="bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-300 pt-16 pb-8 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand Info -->
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-6 group inline-block">
+                        <i class="fa-solid fa-book-open text-amber-600 text-2xl group-hover:text-amber-700 transition-colors"></i>
+                        <span class="font-heading text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Sip & Scroll</span>
+                    </a>
+                    <p class="text-gray-500 dark:text-gray-400 mb-6 text-sm leading-relaxed font-medium">
+                        An independent haven for book lovers and coffee enthusiasts. Stay awhile, read a chapter, and sip slowly.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-gray-900 dark:text-white text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="about.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block text-gray-500 dark:text-gray-400">Our Story</a></li>
+                        <li><a href="bookshop.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block text-gray-500 dark:text-gray-400">Shop Books</a></li>
+                        <li><a href="menu.html" class="text-amber-600 font-semibold block">Cafe Menu</a></li>
+                        <li><a href="events.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block text-gray-500 dark:text-gray-400">Upcoming Events</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block text-gray-500 dark:text-gray-400">Space Rental</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Hours -->
+                <div>
+                    <h4 class="font-heading font-bold text-gray-900 dark:text-white text-lg mb-6">Visit Us</h4>
+                    <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-amber-600"></i>
+                            <span>123 Literary Lane<br>Booktown, BK 10012</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-amber-600"></i>
+                            <a href="tel:5551234567" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">(555) 123-4567</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-amber-600"></i>
+                            <a href="mailto:hello@sipandscroll.com" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">hello@sipandscroll.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="font-heading font-bold text-gray-900 dark:text-white text-lg mb-6">Newsletter</h4>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 font-medium">Subscribe for event updates, staff picks, and exclusive discounts.</p>
+                    <form class="flex flex-col gap-3">
+                        <input type="email" placeholder="Your email address" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md text-gray-900 dark:text-white focus:outline-none focus:border-amber-600 focus:ring-1 focus:ring-amber-600 transition-colors shadow-inner" required>
+                        <button type="submit" class="w-full px-4 h-12 flex items-center justify-center bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-md transition-colors shadow-sm">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-400 font-medium">
+                <p>&copy; 2026 Sip & Scroll. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Javascript -->
+    <script src="script.js"></script>
+</body>
+</html>

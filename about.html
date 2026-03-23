@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Sip & Scroll</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        amber: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 antialiased transition-colors duration-300">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 h-[70px] flex items-center">
+        <div class="container mx-auto px-4 md:px-6 w-full flex justify-between items-center">
+            
+            <a href="index.html" class="flex items-center gap-2 group">
+                <i class="fa-solid fa-book-open text-amber-600 text-2xl group-hover:text-amber-700 transition-colors"></i>
+                <span class="font-heading text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Sip & Scroll</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden xl:flex items-center">
+                <div class="relative group flex items-center py-2 -my-2">
+                    <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium flex items-center gap-[6px]">
+                        Home <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-[100%] pt-2 w-48 left-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div class="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-700 rounded-md shadow-xl py-2 flex flex-col">
+                            <a href="index.html" class="px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 transition-colors">Home 1 (Classic)</a>
+                            <a href="home-2.html" class="px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 transition-colors">Home 2 (Promo)</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">About Us</a>
+                <a href="services.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Services</a>
+                <a href="bookshop.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Bookshop</a>
+                <a href="menu.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Cafe Menu</a>
+                <a href="events.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Events</a>
+                <a href="dashboard.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Dashboard</a>
+        </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <button onclick="toggleTheme()" class="text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                    <i class="fa-solid fa-moon dark:hidden text-lg"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-lg"></i>
+                </button>
+                <div class="hidden xl:flex gap-3 ml-4">
+                    <a href="signup.html" class="bg-amber-600 hover:bg-amber-700 text-white font-medium text-sm px-4 h-10 flex items-center justify-center rounded-md transition-colors shadow-sm">Sign Up</a>
+                </div>
+                
+                <button onclick="toggleMobileMenu()" class="xl:hidden text-gray-600 dark:text-gray-300 p-2 text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-overlay" class="hidden fixed inset-0 bg-black/50 z-40 transition-opacity" onclick="toggleMobileMenu()"></div>
+    
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-900 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl overflow-y-auto">
+        <div class="p-6 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <i class="fa-solid fa-book-open text-amber-600 text-xl group-hover:text-amber-700"></i>
+                <span class="font-heading text-xl font-bold text-gray-900 dark:text-white">Sip & Scroll</span>
+            </a>
+            <button onclick="toggleMobileMenu()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 focus:outline-none">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+        <nav class="p-4 flex flex-col space-y-2">
+            <details class="group">
+                <summary class="nav-link flex justify-between items-center px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    Home <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-open:rotate-180"></i>
+                </summary>
+                <div class="pl-4 pr-2 py-1 space-y-1 mt-1">
+                    <a href="index.html" class="block px-4 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 transition-colors text-sm">Home 1 (Classic)</a>
+                    <a href="home-2.html" class="block px-4 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 transition-colors text-sm">Home 2 (Promo)</a>
+                </div>
+            </details>
+            <a href="about.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">About Us</a>
+            <a href="services.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Services</a>
+            <a href="bookshop.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Bookshop</a>
+            <a href="menu.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Cafe Menu</a>
+            <a href="events.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Events & Community</a>
+            <a href="dashboard.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Dashboard</a>
+            <div class="h-px bg-gray-200 dark:bg-gray-800 my-4 mx-4"></div>
+            <a href="signup.html" class="block mx-4 py-3 bg-amber-600 hover:bg-amber-700 text-white font-medium text-center rounded-md transition-colors shadow-sm">Sign Up</a>
+            
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-[70px]">
+        
+        <!-- About Us Hero / Our Story -->
+        <section class="py-20 md:py-28">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
+                    <div class="lg:w-1/2 text-center lg:text-left">
+                        <span class="text-amber-700 dark:text-amber-400 font-bold tracking-wider uppercase text-sm mb-4 block">Our Story</span>
+                        
+                        <h1 class="font-heading text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                            Where Community, Coffee, & Literature Intersect
+                        </h1>
+                        <p class="text-gray-700 dark:text-gray-300 text-lg mb-6 leading-relaxed">
+                            Sip & Scroll began in 2018 when two friends—a passionate barista and a lifelong bibliophile—realized that the perfect Saturday afternoon consisted of exactly two things: a fresh pour-over and a captivating new novel.
+                        </p>
+                        <p class="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+                            We believed that our local neighborhood needed a third space. A place that wasn't home, wasn't work, but a cozy sanctuary where you could lose yourself in a story or find yourself in a great conversation. Today, we source our books from independent publishers and our beans directly from fair-trade farmers in Colombia and Ethiopia.
+                        </p>
+                    </div>
+                    <div class="lg:w-1/2 relative">
+                        <div class="rounded-2xl overflow-hidden shadow-2xl relative z-10">
+                            <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000&auto=format&fit=crop" alt="The original storefront" class="w-full h-[400px] object-cover">
+                        </div>
+                        <!-- Decorative background block -->
+                        <div class="absolute -bottom-6 -right-6 w-full h-full bg-amber-200 dark:bg-amber-900/40 rounded-2xl z-0 transform"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values -->
+        <section class="py-20 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-16">What We Stand For</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                    <!-- Value 1 -->
+                    <div class="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover-lift">
+                        <div class="w-16 h-16 bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 rounded-full flex items-center justify-center text-2xl mx-auto mb-6">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-gray-900 dark:text-white mb-4">Sustainable Sourcing</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Our coffee is 100% fair-trade and organic. We exclusively use compostable cups, lids, and packaging to minimize our environmental footprint.</p>
+                    </div>
+                    
+                    <!-- Value 2 -->
+                    <div class="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover-lift">
+                        <div class="w-16 h-16 bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 rounded-full flex items-center justify-center text-2xl mx-auto mb-6">
+                            <i class="fa-solid fa-pen-nib"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-gray-900 dark:text-white mb-4">Supporting Local Voices</h3>
+                        <p class="text-gray-600 dark:text-gray-400">We dedicate 20% of our shelf space to independent authors and local writers, ensuring diverse stories reach our community.</p>
+                    </div>
+
+                    <!-- Value 3 -->
+                    <div class="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover-lift">
+                        <div class="w-16 h-16 bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 rounded-full flex items-center justify-center text-2xl mx-auto mb-6">
+                            <i class="fa-solid fa-handshake-angle"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-gray-900 dark:text-white mb-4">A Space for Everyone</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Inclusivity is our core. From our accessible layout to our diverse event programming, Sip & Scroll is a safe haven for all.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet the Team (Compact Cards) -->
+        <section class="py-20 bg-gray-50 dark:bg-gray-800 border-y border-gray-200 dark:border-gray-700">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <span class="text-amber-700 dark:text-amber-400 font-bold tracking-wider uppercase text-sm mb-4 block">Our Family</span>
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Meet the Booksellers & Baristas</h2>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                    <!-- Team Member 1 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow border border-gray-100 dark:border-gray-700 text-center hover-lift p-6">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 border-2 border-amber-500">
+                            <img src="https://i.pravatar.cc/150?img=12" alt="David" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold text-gray-900 dark:text-white text-lg">David Chen</h4>
+                        <p class="text-xs text-amber-600 dark:text-amber-400 uppercase tracking-widest font-bold mb-3">Co-Founder & Lead Buyer</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 italic">Favorite genre: Sci-Fi</p>
+                    </div>
+
+                    <!-- Team Member 2 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow border border-gray-100 dark:border-gray-700 text-center hover-lift p-6">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 border-2 border-amber-500">
+                            <img src="https://i.pravatar.cc/150?img=5" alt="Sarah" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold text-gray-900 dark:text-white text-lg">Sarah Jenkins</h4>
+                        <p class="text-xs text-amber-600 dark:text-amber-400 uppercase tracking-widest font-bold mb-3">Co-Founder & Head Roaster</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 italic">Drink of choice: Black drip</p>
+                    </div>
+
+                    <!-- Team Member 3 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow border border-gray-100 dark:border-gray-700 text-center hover-lift p-6">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 border-2 border-amber-500">
+                            <img src="https://i.pravatar.cc/150?img=33" alt="Mia" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold text-gray-900 dark:text-white text-lg">Mia Rodriguez</h4>
+                        <p class="text-xs text-amber-600 dark:text-amber-400 uppercase tracking-widest font-bold mb-3">Events Coordinator</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 italic">Favorite genre: Romance</p>
+                    </div>
+
+                    <!-- Team Member 4 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow border border-gray-100 dark:border-gray-700 text-center hover-lift p-6">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 border-2 border-amber-500">
+                            <img src="https://i.pravatar.cc/150?img=11" alt="James" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold text-gray-900 dark:text-white text-lg">James Wilson</h4>
+                        <p class="text-xs text-amber-600 dark:text-amber-400 uppercase tracking-widest font-bold mb-3">Senior Barista</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 italic">Drink of choice: Cortado</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery -->
+        <section class="py-20 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">A Look Inside</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="md:col-span-2 md:row-span-2 rounded-xl overflow-hidden relative group h-64 md:h-full">
+                        <img src="assets/images/main_reading_nook.png" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700" alt="Main Reading Nook">
+                        <div class="absolute inset-0 bg-black/30 flex items-end p-6 opacity-0 group-hover:opacity-100 transition duration-300">
+                            <h4 class="text-white font-bold text-lg">The Main Reading Nook</h4>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden relative group h-48 md:h-64">
+                        <img src="assets/images/espresso_bar.png" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700" alt="The Espresso Bar">
+                        <div class="absolute inset-0 bg-black/30 flex items-end p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                            <h4 class="text-white font-bold">The Espresso Bar</h4>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden relative group h-48 md:h-64">
+                        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-black/30 flex items-end p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                            <h4 class="text-white font-bold">Fiction Aisle</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Impact -->
+        <section class="py-20 bg-teal-900 text-white relative overflow-hidden">
+            <div class="absolute -right-40 -top-40 w-96 h-96 bg-teal-800 rounded-full opacity-50 blur-3xl"></div>
+            <div class="absolute -left-40 -bottom-40 w-96 h-96 bg-teal-800 rounded-full opacity-50 blur-3xl"></div>
+
+            <div class="container mx-auto px-4 text-center relative z-10 max-w-4xl">
+                <i class="fa-solid fa-hands-holding-child text-5xl text-amber-500 mb-6 drop-shadow-sm"></i>
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-6">Giving Back to Our Roots</h2>
+                <p class="text-lg md:text-xl text-teal-100 mb-8 leading-relaxed">
+                    We believe a local business should enrich its neighborhood. Every month, we donate 5% of our total book sales to local public school libraries. We also host free weekly literacy programs and creative writing workshops for teens.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12 border-t border-teal-800 pt-12">
+                    <div>
+                        <div class="text-4xl font-bold text-amber-400 mb-2">$25k+</div>
+                        <div class="text-sm uppercase tracking-wider text-teal-200">Donated to Schools</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-amber-400 mb-2">1,200</div>
+                        <div class="text-sm uppercase tracking-wider text-teal-200">Books Gifted</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-amber-400 mb-2">50+</div>
+                        <div class="text-sm uppercase tracking-wider text-teal-200">Workshops Hosted</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer - Global -->
+    <footer class="bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-300 pt-16 pb-8 border-t border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand Info -->
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-6 group inline-block">
+                        <i class="fa-solid fa-book-open text-amber-600 text-2xl group-hover:text-amber-700 transition-colors"></i>
+                        <span class="font-heading text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Sip & Scroll</span>
+                    </a>
+                    <p class="text-gray-500 dark:text-gray-400 mb-6 text-sm leading-relaxed font-medium">
+                        An independent haven for book lovers and coffee enthusiasts. Stay awhile, read a chapter, and sip slowly.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-gray-900 dark:text-white text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="about.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block text-gray-500 dark:text-gray-400">Our Story</a></li>
+                        <li><a href="bookshop.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block text-gray-500 dark:text-gray-400">Shop Books</a></li>
+                        <li><a href="menu.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block text-gray-500 dark:text-gray-400">Cafe Menu</a></li>
+                        <li><a href="events.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block text-gray-500 dark:text-gray-400">Upcoming Events</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block text-gray-500 dark:text-gray-400">Space Rental</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Hours -->
+                <div>
+                    <h4 class="font-heading font-bold text-gray-900 dark:text-white text-lg mb-6">Visit Us</h4>
+                    <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-amber-600"></i>
+                            <span>123 Literary Lane<br>Booktown, BK 10012</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-amber-600"></i>
+                            <a href="tel:5551234567" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">(555) 123-4567</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-amber-600"></i>
+                            <a href="mailto:hello@sipandscroll.com" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">hello@sipandscroll.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="font-heading font-bold text-gray-900 dark:text-white text-lg mb-6">Newsletter</h4>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 font-medium">Subscribe for event updates, staff picks, and exclusive discounts.</p>
+                    <form class="flex flex-col gap-3">
+                        <input type="email" placeholder="Your email address" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md text-gray-900 dark:text-white focus:outline-none focus:border-amber-600 focus:ring-1 focus:ring-amber-600 transition-colors shadow-inner" required>
+                        <button type="submit" class="w-full px-4 h-12 flex items-center justify-center bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-md transition-colors shadow-sm">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-400 font-medium">
+                <p>&copy; 2026 Sip & Scroll. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Javascript -->
+    <script src="script.js"></script>
+</body>
+</html>
