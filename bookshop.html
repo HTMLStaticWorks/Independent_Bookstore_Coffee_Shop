@@ -122,6 +122,82 @@
         </nav>
     </div>
 
+    <!-- Mobile Filter Drawer Overlay -->
+    <div id="filter-overlay" class="hidden fixed inset-0 bg-black/50 z-40 transition-opacity lg:hidden" onclick="toggleFilterDrawer()"></div>
+
+    <!-- Mobile Filter Drawer -->
+    <div id="filter-drawer" class="fixed inset-y-0 left-0 w-72 max-w-[85vw] bg-white dark:bg-gray-900 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl overflow-y-auto lg:hidden">
+        <div class="p-6 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center">
+            <h3 class="font-heading text-xl font-bold text-gray-900 dark:text-white">Filters</h3>
+            <button onclick="toggleFilterDrawer()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 focus:outline-none">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-6">
+            <!-- Format Filter -->
+            <div class="mb-6">
+                <h4 class="font-bold text-gray-800 dark:text-gray-200 mb-3 text-sm uppercase tracking-wide">Format</h4>
+                <div class="space-y-2">
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 rounded text-amber-600 focus:ring-amber-500 dark:bg-gray-700 dark:border-gray-600 border-gray-300">
+                        <span class="text-gray-700 dark:text-gray-300 text-sm">Hardcover</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 rounded text-amber-600 focus:ring-amber-500 dark:bg-gray-700 dark:border-gray-600 border-gray-300">
+                        <span class="text-gray-700 dark:text-gray-300 text-sm">Paperback</span>
+                    </label>
+                </div>
+            </div>
+            <!-- Price Filter -->
+            <div class="mb-6">
+                <h4 class="font-bold text-gray-800 dark:text-gray-200 mb-3 text-sm uppercase tracking-wide">Price</h4>
+                <div class="space-y-2">
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="price-mobile" class="w-4 h-4 text-amber-600 focus:ring-amber-500 dark:bg-gray-700 dark:border-gray-600 border-gray-300">
+                        <span class="text-gray-700 dark:text-gray-300 text-sm">Under $15</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="price-mobile" class="w-4 h-4 text-amber-600 focus:ring-amber-500 dark:bg-gray-700 dark:border-gray-600 border-gray-300">
+                        <span class="text-gray-700 dark:text-gray-300 text-sm">$15 - $25</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="price-mobile" class="w-4 h-4 text-amber-600 focus:ring-amber-500 dark:bg-gray-700 dark:border-gray-600 border-gray-300">
+                        <span class="text-gray-700 dark:text-gray-300 text-sm">Over $25</span>
+                    </label>
+                </div>
+            </div>
+            <!-- Genre Filter -->
+            <div class="mb-6">
+                <h4 class="font-bold text-gray-800 dark:text-gray-200 mb-3 text-sm uppercase tracking-wide">Genre</h4>
+                <div class="space-y-2">
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 rounded text-amber-600 focus:ring-amber-500 dark:bg-gray-700 dark:border-gray-600 border-gray-300">
+                        <span class="text-gray-700 dark:text-gray-300 text-sm">Fiction</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 rounded text-amber-600 focus:ring-amber-500 dark:bg-gray-700 dark:border-gray-600 border-gray-300">
+                        <span class="text-gray-700 dark:text-gray-300 text-sm">Non-Fiction</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 rounded text-amber-600 focus:ring-amber-500 dark:bg-gray-700 dark:border-gray-600 border-gray-300">
+                        <span class="text-gray-700 dark:text-gray-300 text-sm">Mystery / Thriller</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 rounded text-amber-600 focus:ring-amber-500 dark:bg-gray-700 dark:border-gray-600 border-gray-300">
+                        <span class="text-gray-700 dark:text-gray-300 text-sm">Science Fiction</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 rounded text-amber-600 focus:ring-amber-500 dark:bg-gray-700 dark:border-gray-600 border-gray-300">
+                        <span class="text-gray-700 dark:text-gray-300 text-sm">Romance</span>
+                    </label>
+                </div>
+            </div>
+            <button onclick="toggleFilterDrawer()" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-md transition-colors">
+                Apply Filters
+            </button>
+        </div>
+    </div>
+
     <!-- Main Content -->
     <main class="pt-[70px]">
         
@@ -252,7 +328,7 @@
                             
                             <div class="flex w-full md:w-auto gap-4">
                                 <!-- Mobile Filter Button -->
-                                <button class="lg:hidden flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 transition flex items-center justify-center gap-2 text-sm">
+                                <button onclick="toggleFilterDrawer()" class="lg:hidden flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 transition flex items-center justify-center gap-2 text-sm">
                                     <i class="fa-solid fa-filter"></i> Filters
                                 </button>
                                 
@@ -485,5 +561,21 @@
 
     <!-- Global Javascript -->
     <script src="script.js"></script>
+    <script>
+        function toggleFilterDrawer() {
+            const drawer = document.getElementById('filter-drawer');
+            const overlay = document.getElementById('filter-overlay');
+            const isOpen = !drawer.classList.contains('-translate-x-full');
+            if (isOpen) {
+                drawer.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+                document.body.style.overflow = '';
+            } else {
+                drawer.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+    </script>
 </body>
 </html>
