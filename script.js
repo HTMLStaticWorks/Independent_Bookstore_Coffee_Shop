@@ -32,10 +32,8 @@ function highlightActiveNav() {
         const linkPath = link.getAttribute('href');
         if (linkPath === currentPath) {
             link.classList.add('text-amber-600', 'dark:text-amber-400', 'font-semibold');
-            link.classList.remove('text-gray-600', 'dark:text-gray-300');
-        } else {
-            link.classList.remove('text-amber-600', 'dark:text-amber-400', 'font-semibold');
-            link.classList.add('text-gray-600', 'dark:text-gray-300');
+            // Remove both desktop and mobile default text color classes
+            link.classList.remove('text-gray-600', 'dark:text-gray-300', 'text-gray-700', 'dark:text-gray-200');
         }
     });
 }
