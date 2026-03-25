@@ -40,6 +40,23 @@ function highlightActiveNav() {
     });
 }
 
+// RTL Toggle Logic
+function toggleRTL() {
+    const html = document.documentElement;
+    const isRTL = html.getAttribute('dir') === 'rtl';
+    if (isRTL) {
+        html.removeAttribute('dir');
+        localStorage.rtl = 'ltr';
+    } else {
+        html.setAttribute('dir', 'rtl');
+        localStorage.rtl = 'rtl';
+    }
+    // Update all RTL button icons on the page
+    document.querySelectorAll('.rtl-icon-ltr, .rtl-icon-rtl').forEach(el => {
+        el.classList.toggle('hidden');
+    });
+}
+
 // Initialization
 document.addEventListener('DOMContentLoaded', () => {
     // Set initial theme based on localStorage or system preference
@@ -47,6 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.classList.add('dark');
     } else {
         document.documentElement.classList.remove('dark');
+    }
+
+    // Set initial RTL state based on localStorage
+    if (localStorage.rtl === 'rtl') {
+        document.documentElement.setAttribute('dir', 'rtl');
+        document.querySelectorAll('.rtl-icon-ltr').forEach(el => el.classList.add('hidden'));
+        document.querySelectorAll('.rtl-icon-rtl').forEach(el => el.classList.remove('hidden'));
     }
 
     highlightActiveNav();
