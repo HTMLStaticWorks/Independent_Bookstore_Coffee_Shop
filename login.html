@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Sip & Scroll</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
-    
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -32,35 +34,46 @@
             }
         }
     </script>
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-amber-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 antialiased transition-colors duration-300 min-h-screen flex flex-col">
+
+<body
+    class="bg-amber-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 antialiased transition-colors duration-300 min-h-screen flex flex-col">
 
 
 
 
     <!-- Main Content -->
     <main class="flex-grow flex items-center justify-center px-4 py-12 relative overflow-hidden">
-        
+
         <!-- Abstract Background Elements -->
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-            <div class="absolute -top-24 -left-24 w-64 h-64 bg-amber-200 dark:bg-amber-900/20 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-3xl opacity-50"></div>
-            <div class="absolute bottom-0 right-0 w-80 h-80 bg-orange-200 dark:bg-orange-900/20 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-3xl opacity-50"></div>
+            <div
+                class="absolute -top-24 -left-24 w-64 h-64 bg-amber-200 dark:bg-amber-900/20 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-3xl opacity-50">
+            </div>
+            <div
+                class="absolute bottom-0 right-0 w-80 h-80 bg-orange-200 dark:bg-orange-900/20 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-3xl opacity-50">
+            </div>
         </div>
 
         <!-- Login Card -->
-        <div class="bg-white dark:bg-gray-800 w-full max-w-md rounded-2xl shadow-2xl overflow-hidden relative z-10 border border-gray-100 dark:border-gray-700">
+        <div
+            class="bg-white dark:bg-gray-800 w-full max-w-md rounded-2xl shadow-2xl overflow-hidden relative z-10 border border-gray-100 dark:border-gray-700">
             <!-- Utility Buttons inside card -->
             <div class="absolute top-4 right-4 flex flex-col items-end gap-1">
-                <button onclick="toggleTheme()" class="text-gray-500 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-all" aria-label="Toggle Dark Mode">
+                <button onclick="toggleTheme()"
+                    class="text-gray-500 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                    aria-label="Toggle Dark Mode">
                     <i class="fa-solid fa-moon dark:hidden text-sm"></i>
                     <i class="fa-solid fa-sun hidden dark:block text-sm"></i>
                 </button>
-                <button onclick="toggleRTL()" class="text-gray-500 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 px-2 py-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-all font-bold text-xs" aria-label="Toggle RTL/LTR">
+                <button onclick="toggleRTL()"
+                    class="text-gray-500 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 px-2 py-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-all font-bold text-xs"
+                    aria-label="Toggle RTL/LTR">
                     <span class="rtl-icon-ltr">RTL</span>
                     <span class="rtl-icon-rtl hidden">LTR</span>
                 </button>
@@ -68,47 +81,59 @@
             <div class="p-8 md:p-10">
                 <div class="text-center mb-8">
                     <a href="index.html" class="inline-flex items-center justify-center gap-2 group mb-6">
-                        <i class="fa-solid fa-book-open text-amber-600 text-3xl group-hover:text-amber-700 transition-colors"></i>
-                        <span class="font-heading text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Sip & Scroll</span>
+                        <i
+                            class="fa-solid fa-book-open text-amber-600 text-3xl group-hover:text-amber-700 transition-colors"></i>
+                        <span
+                            class="font-heading text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Sip
+                            & Scroll</span>
                     </a>
                     <h1 class="font-heading text-3xl font-bold text-gray-900 dark:text-white mb-2">Welcome Back</h1>
-                    <p class="text-gray-500 dark:text-gray-400">Log in to view your points, saved books, and event RSVPs.</p>
+                    <p class="text-gray-500 dark:text-gray-400">Log in to view your points, saved books, and event
+                        RSVPs.</p>
                 </div>
 
                 <form class="space-y-6" action="dashboard.html" method="GET">
                     <div>
-                        <label for="email" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Email Address</label>
+                        <label for="email" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Email
+                            Address</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <i class="fa-solid fa-envelope text-gray-400"></i>
                             </div>
-                            <input type="email" id="email" required placeholder="name@example.com" class="pl-10 w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-gray-900 dark:text-white transition shadow-sm">
+                            <input type="email" id="email" required placeholder="name@example.com"
+                                class="pl-10 w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-gray-900 dark:text-white transition shadow-sm">
                         </div>
                     </div>
 
                     <div>
                         <div class="mb-2">
-                            <label for="password" class="block text-sm font-bold text-gray-700 dark:text-gray-300">Password</label>
+                            <label for="password"
+                                class="block text-sm font-bold text-gray-700 dark:text-gray-300">Password</label>
                         </div>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <i class="fa-solid fa-lock text-gray-400"></i>
                             </div>
-                            <input type="password" id="password" required placeholder="••••••••" class="pl-10 w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-gray-900 dark:text-white transition shadow-sm">
+                            <input type="password" id="password" required placeholder="••••••••"
+                                class="pl-10 w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-gray-900 dark:text-white transition shadow-sm">
                         </div>
                     </div>
 
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
-                            <input id="remember-me" type="checkbox" class="h-4 w-4 text-amber-600 focus:ring-amber-500 border-gray-300 rounded bg-gray-50 dark:bg-gray-900 dark:border-gray-700 dark:checked:bg-amber-600">
+                            <input id="remember-me" type="checkbox"
+                                class="h-4 w-4 text-amber-600 focus:ring-amber-500 border-gray-300 rounded bg-gray-50 dark:bg-gray-900 dark:border-gray-700 dark:checked:bg-amber-600">
                             <label for="remember-me" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
                                 Remember me for 30 days
                             </label>
                         </div>
-                        <a href="#" class="text-sm font-bold text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300 transition-colors">Forgot password?</a>
+                        <a href="#"
+                            class="text-sm font-bold text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300 transition-colors">Forgot
+                            password?</a>
                     </div>
 
-                    <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-md shadow-md transition-all hover:shadow-lg hover:-translate-y-0.5 flex justify-center items-center gap-2">
+                    <button type="submit"
+                        class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-md shadow-md transition-all hover:shadow-lg hover:-translate-y-0.5 flex justify-center items-center gap-2">
                         Log In <i class="fa-solid fa-arrow-right text-sm"></i>
                     </button>
                 </form>
@@ -118,26 +143,32 @@
                         <div class="w-full border-t border-gray-200 dark:border-gray-700"></div>
                     </div>
                     <div class="relative flex justify-center text-sm">
-                        <span class="px-2 bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400">Or continue with</span>
+                        <span class="px-2 bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400">Or continue
+                            with</span>
                     </div>
                 </div>
 
                 <div class="mt-6 grid grid-cols-2 gap-4">
-                    <button type="button" class="w-full inline-flex justify-center items-center py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-gray-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors gap-2">
+                    <button type="button"
+                        class="w-full inline-flex justify-center items-center py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-gray-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors gap-2">
                         <i class="fa-brands fa-google text-red-500 text-lg"></i>
                         Google
                     </button>
-                    <button type="button" class="w-full inline-flex justify-center items-center py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-gray-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors gap-2">
+                    <button type="button"
+                        class="w-full inline-flex justify-center items-center py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-gray-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors gap-2">
                         <i class="fa-brands fa-apple text-gray-900 dark:text-white text-lg"></i>
                         Apple
                     </button>
                 </div>
             </div>
-            
-            <div class="px-8 py-5 bg-gray-50 dark:bg-gray-700/50 border-t border-gray-100 dark:border-gray-700 text-center">
+
+            <div
+                class="px-8 py-5 bg-gray-50 dark:bg-gray-700/50 border-t border-gray-100 dark:border-gray-700 text-center">
                 <p class="text-sm text-gray-600 dark:text-gray-400">
-                    Don't have an account? 
-                    <a href="signup.html" class="font-bold text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300 transition-colors">Sign up</a>
+                    Don't have an account?
+                    <a href="signup.html"
+                        class="font-bold text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300 transition-colors">Sign
+                        up</a>
                 </p>
             </div>
         </div>
@@ -147,4 +178,5 @@
     <!-- Global Javascript -->
     <script src="script.js"></script>
 </body>
+
 </html>
