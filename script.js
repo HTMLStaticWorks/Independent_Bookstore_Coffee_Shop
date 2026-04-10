@@ -31,7 +31,7 @@ function highlightActiveNav() {
     navLinks.forEach(link => {
         const linkPath = link.getAttribute('href');
         if (linkPath === currentPath) {
-            link.classList.add('text-amber-600', 'dark:text-amber-400', 'font-semibold');
+            link.classList.add('text-orange-600', 'dark:text-orange-400', 'font-semibold');
             // Remove both desktop and mobile default text color classes
             link.classList.remove('text-gray-600', 'dark:text-gray-300', 'text-gray-700', 'dark:text-gray-200');
         }

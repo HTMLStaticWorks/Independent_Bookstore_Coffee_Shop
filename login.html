@@ -17,17 +17,17 @@
             theme: {
                 extend: {
                     colors: {
-                        amber: {
-                            50: '#fffbeb',
-                            100: '#fef3c7',
-                            200: '#fde68a',
-                            300: '#fcd34d',
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                            700: '#b45309',
-                            800: '#92400e',
-                            900: '#78350f',
+                        orange: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
                         }
                     }
                 }
@@ -42,18 +42,33 @@
 </head>
 
 <body
-    class="bg-amber-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 antialiased transition-colors duration-300 min-h-screen flex flex-col">
+    class="bg-orange-50 dark:bg-black text-gray-800 dark:text-gray-100 antialiased transition-colors duration-300 min-h-screen flex flex-col relative">
 
-
-
+    <!-- Top Navigation (Outside Container) -->
+    <header class="w-full px-6 py-4 flex justify-end items-center relative z-20">
+        <div class="flex flex-col items-end gap-1">
+            <button onclick="toggleTheme()"
+                class="text-gray-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon dark:hidden text-lg"></i>
+                <i class="fa-solid fa-sun hidden dark:block text-lg"></i>
+            </button>
+            <button onclick="toggleRTL()"
+                class="text-gray-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 px-2 py-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-all font-bold text-xs"
+                aria-label="Toggle RTL/LTR">
+                <span class="rtl-icon-ltr">RTL</span>
+                <span class="rtl-icon-rtl hidden">LTR</span>
+            </button>
+        </div>
+    </header>
 
     <!-- Main Content -->
-    <main class="flex-grow flex items-center justify-center px-4 py-12 relative overflow-hidden">
+    <main class="flex-grow flex items-center justify-center px-4 py-8 relative overflow-hidden">
 
         <!-- Abstract Background Elements -->
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
             <div
-                class="absolute -top-24 -left-24 w-64 h-64 bg-amber-200 dark:bg-amber-900/20 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-3xl opacity-50">
+                class="absolute -top-24 -left-24 w-64 h-64 bg-orange-200 dark:bg-orange-900/20 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-3xl opacity-50">
             </div>
             <div
                 class="absolute bottom-0 right-0 w-80 h-80 bg-orange-200 dark:bg-orange-900/20 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-3xl opacity-50">
@@ -62,27 +77,13 @@
 
         <!-- Login Card -->
         <div
-            class="bg-white dark:bg-gray-800 w-full max-w-md rounded-2xl shadow-2xl overflow-hidden relative z-10 border border-gray-100 dark:border-gray-700">
-            <!-- Utility Buttons inside card -->
-            <div class="absolute top-4 right-4 flex flex-col items-end gap-1">
-                <button onclick="toggleTheme()"
-                    class="text-gray-500 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
-                    aria-label="Toggle Dark Mode">
-                    <i class="fa-solid fa-moon dark:hidden text-sm"></i>
-                    <i class="fa-solid fa-sun hidden dark:block text-sm"></i>
-                </button>
-                <button onclick="toggleRTL()"
-                    class="text-gray-500 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 px-2 py-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-all font-bold text-xs"
-                    aria-label="Toggle RTL/LTR">
-                    <span class="rtl-icon-ltr">RTL</span>
-                    <span class="rtl-icon-rtl hidden">LTR</span>
-                </button>
-            </div>
+            class="bg-white dark:bg-gray-900 w-full max-w-md rounded-2xl shadow-2xl overflow-hidden relative z-10 border border-gray-100 dark:border-gray-700">
+            
             <div class="p-8 md:p-10">
                 <div class="text-center mb-8">
                     <a href="index.html" class="inline-flex items-center justify-center gap-2 group mb-6">
                         <i
-                            class="fa-solid fa-book-open text-amber-600 text-3xl group-hover:text-amber-700 transition-colors"></i>
+                            class="fa-solid fa-book-open text-orange-600 text-3xl group-hover:text-orange-700 transition-colors"></i>
                         <span
                             class="font-heading text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Sip
                             & Scroll</span>
@@ -101,7 +102,7 @@
                                 <i class="fa-solid fa-envelope text-gray-400"></i>
                             </div>
                             <input type="email" id="email" required placeholder="name@example.com"
-                                class="pl-10 w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-gray-900 dark:text-white transition shadow-sm">
+                                class="pl-10 w-full px-4 py-3 bg-gray-50 dark:bg-black border border-gray-200 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 dark:text-white transition shadow-sm">
                         </div>
                     </div>
 
@@ -115,25 +116,25 @@
                                 <i class="fa-solid fa-lock text-gray-400"></i>
                             </div>
                             <input type="password" id="password" required placeholder="••••••••"
-                                class="pl-10 w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-gray-900 dark:text-white transition shadow-sm">
+                                class="pl-10 w-full px-4 py-3 bg-gray-50 dark:bg-black border border-gray-200 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 dark:text-white transition shadow-sm">
                         </div>
                     </div>
 
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
                             <input id="remember-me" type="checkbox"
-                                class="h-4 w-4 text-amber-600 focus:ring-amber-500 border-gray-300 rounded bg-gray-50 dark:bg-gray-900 dark:border-gray-700 dark:checked:bg-amber-600">
+                                class="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded bg-gray-50 dark:bg-black dark:border-gray-700 dark:checked:bg-orange-600">
                             <label for="remember-me" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
                                 Remember me 
                             </label>
                         </div>
                         <a href="#"
-                            class="text-sm font-bold text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300 transition-colors">Forgot
+                            class="text-sm font-bold text-orange-600 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-300 transition-colors">Forgot
                             password?</a>
                     </div>
 
                     <button type="submit"
-                        class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-md shadow-md transition-all hover:shadow-lg hover:-translate-y-0.5 flex justify-center items-center gap-2">
+                        class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-4 rounded-md shadow-md transition-all hover:shadow-lg hover:-translate-y-0.5 flex justify-center items-center gap-2">
                         Log In <i class="fa-solid fa-arrow-right text-sm"></i>
                     </button>
                 </form>
@@ -143,7 +144,7 @@
                         <div class="w-full border-t border-gray-200 dark:border-gray-700"></div>
                     </div>
                     <div class="relative flex justify-center text-sm">
-                        <span class="px-2 bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400">Or continue
+                        <span class="px-2 bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400">Or continue
                             with</span>
                     </div>
                 </div>
@@ -167,7 +168,7 @@
                 <p class="text-sm text-gray-600 dark:text-gray-400">
                     Don't have an account?
                     <a href="signup.html"
-                        class="font-bold text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300 transition-colors">Sign
+                        class="font-bold text-orange-600 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-300 transition-colors">Sign
                         up</a>
                 </p>
             </div>

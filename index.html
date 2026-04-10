@@ -15,17 +15,17 @@
             theme: {
                 extend: {
                     colors: {
-                        amber: {
-                            50: '#fffbeb',
-                            100: '#fef3c7',
-                            200: '#fde68a',
-                            300: '#fcd34d',
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                            700: '#b45309',
-                            800: '#92400e',
-                            900: '#78350f',
+                        orange: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
                         }
                     }
                 }
@@ -38,15 +38,15 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 antialiased transition-colors duration-300">
+<body class="bg-white dark:bg-black text-gray-800 dark:text-gray-100 antialiased transition-colors duration-300">
 
     <!-- Header / Navbar -->
-    <header class="fixed top-0 w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 h-[70px] flex items-center">
+    <header class="fixed top-0 w-full z-50 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 h-[70px] flex items-center">
         <div class="container mx-auto px-4 md:px-6 w-full flex justify-between items-center">
             
             <!-- Logo (Clickable -> redirect to index.html) -->
             <a href="index.html" class="flex items-center gap-2 group">
-                <i class="fa-solid fa-book-open text-amber-600 text-2xl group-hover:text-amber-700 transition-colors"></i>
+                <i class="fa-solid fa-book-open text-orange-600 text-2xl group-hover:text-orange-700 transition-colors"></i>
                 <span class="font-heading text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Sip & Scroll</span>
             </a>
 
@@ -54,36 +54,36 @@
             <nav class="hidden xl:flex items-center">
                 <!-- Spacing consistency handled by CSS rules in styles.css -->
                 <div class="relative group flex items-center py-2 -my-2">
-                    <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium flex items-center gap-[6px]">
+                    <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 font-medium flex items-center gap-[6px]">
                         Home <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
                     </button>
                     <div class="absolute top-[100%] pt-2 w-48 left-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                        <div class="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-700 rounded-md shadow-xl py-2 flex flex-col">
-                            <a href="index.html" class="px-4 py-2.5 text-sm font-semibold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-gray-800 transition-colors">Home 1 (Classic)</a>
-                            <a href="home-2.html" class="px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 transition-colors">Home 2 (Promo)</a>
+                        <div class="bg-white dark:bg-black border border-gray-100 dark:border-gray-700 rounded-md shadow-xl py-2 flex flex-col">
+                            <a href="index.html" class="px-4 py-2.5 text-sm font-semibold text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-gray-900 transition-colors">Home 1 (Classic)</a>
+                            <a href="home-2.html" class="px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 transition-colors">Home 2 (Promo)</a>
                         </div>
                     </div>
                 </div>
-                <a href="about.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">About Us</a>
-                <a href="services.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Services</a>
-                <a href="bookshop.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Bookshop</a>
-                <a href="menu.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Cafe Menu</a>
-                <a href="events.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Events</a>
-                <a href="dashboard.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium">Dashboard</a>
+                <a href="about.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 font-medium">About Us</a>
+                <a href="services.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 font-medium">Services</a>
+                <a href="bookshop.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 font-medium">Bookshop</a>
+                <a href="menu.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 font-medium">Cafe Menu</a>
+                <a href="events.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 font-medium">Events</a>
+                <a href="dashboard.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 font-medium">Dashboard</a>
         </nav>
 
             <!-- Actions -->
             <div class="flex items-center gap-4">
-                <button onclick="toggleTheme()" class="text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle Light/Dark Theme">
+                <button onclick="toggleTheme()" class="text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle Light/Dark Theme">
                     <i class="fa-solid fa-moon dark:hidden text-lg"></i>
                     <i class="fa-solid fa-sun hidden dark:block text-lg"></i>
                 </button>
-                <button onclick="toggleRTL()" class="text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle RTL/LTR">
+                <button onclick="toggleRTL()" class="text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle RTL/LTR">
                     <span class="rtl-icon-ltr font-bold text-xs">RTL</span>
                     <span class="rtl-icon-rtl hidden font-bold text-xs">LTR</span>
                 </button>
                 <div class="hidden xl:flex gap-3 ml-4">
-                    <a href="signup.html" class="bg-amber-600 hover:bg-amber-700 text-white font-medium text-sm px-4 h-10 flex items-center justify-center rounded-md transition-colors shadow-sm">Sign Up</a>
+                    <a href="signup.html" class="bg-orange-600 hover:bg-orange-700 text-white font-medium text-sm px-4 h-10 flex items-center justify-center rounded-md transition-colors shadow-sm">Sign Up</a>
                 </div>
                 
                 <!-- Mobile Menu Hamburger Button -->
@@ -98,10 +98,10 @@
     <div id="mobile-overlay" class="hidden fixed inset-0 bg-black/50 z-40 transition-opacity" onclick="toggleMobileMenu()"></div>
     
     <!-- Mobile Menu (Hamburger slides from left) -->
-    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-900 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl overflow-y-auto">
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white dark:bg-black z-50 transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl overflow-y-auto">
         <div class="p-6 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-2 group">
-                <i class="fa-solid fa-book-open text-amber-600 text-xl group-hover:text-amber-700"></i>
+                <i class="fa-solid fa-book-open text-orange-600 text-xl group-hover:text-orange-700"></i>
                 <span class="font-heading text-xl font-bold text-gray-900 dark:text-white">Sip & Scroll</span>
             </a>
             <button onclick="toggleMobileMenu()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 focus:outline-none">
@@ -110,28 +110,28 @@
         </div>
         <nav class="p-4 flex flex-col space-y-2">
             <details class="group">
-                <summary class="nav-link flex justify-between items-center px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <summary class="nav-link flex justify-between items-center px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 font-medium transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                     Home <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-open:rotate-180"></i>
                 </summary>
                 <div class="pl-4 pr-2 py-1 space-y-1 mt-1">
-                    <a href="index.html" class="block px-4 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 transition-colors text-sm">Home 1 (Classic)</a>
-                    <a href="home-2.html" class="block px-4 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 transition-colors text-sm">Home 2 (Promo)</a>
+                    <a href="index.html" class="block px-4 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 transition-colors text-sm">Home 1 (Classic)</a>
+                    <a href="home-2.html" class="block px-4 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 transition-colors text-sm">Home 2 (Promo)</a>
                 </div>
             </details>
-            <a href="about.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">About Us</a>
-            <a href="services.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Services</a>
-            <a href="bookshop.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Bookshop</a>
-            <a href="menu.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Cafe Menu</a>
-            <a href="events.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Events & Community</a>
-            <a href="dashboard.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors">Dashboard</a>
+            <a href="about.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 font-medium transition-colors">About Us</a>
+            <a href="services.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 font-medium transition-colors">Services</a>
+            <a href="bookshop.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 font-medium transition-colors">Bookshop</a>
+            <a href="menu.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 font-medium transition-colors">Cafe Menu</a>
+            <a href="events.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 font-medium transition-colors">Events & Community</a>
+            <a href="dashboard.html" class="nav-link block px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 font-medium transition-colors">Dashboard</a>
             
-            <div class="h-px bg-gray-200 dark:bg-gray-800 my-4 mx-4"></div>
-            <button onclick="toggleRTL()" class="flex items-center gap-3 px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 hover:text-amber-600 font-medium transition-colors w-full">
+            <div class="h-px bg-gray-200 dark:bg-gray-900 my-4 mx-4"></div>
+            <button onclick="toggleRTL()" class="flex items-center gap-3 px-4 py-3 rounded-md text-gray-700 dark:text-gray-200 hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 font-medium transition-colors w-full">
                 <i class="fa-solid fa-right-left text-sm"></i>
                 <span class="rtl-icon-ltr">Switch to RTL</span>
                 <span class="rtl-icon-rtl hidden">Switch to LTR</span>
             </button>
-            <a href="signup.html" class="block mx-4 py-3 bg-amber-600 hover:bg-amber-700 text-white font-medium text-center rounded-md transition-colors shadow-sm">Sign Up</a>
+            <a href="signup.html" class="block mx-4 py-3 bg-orange-600 hover:bg-orange-700 text-white font-medium text-center rounded-md transition-colors shadow-sm">Sign Up</a>
             
             
         </nav>
@@ -147,7 +147,7 @@
             
             <div class="container mx-auto px-4 z-10 text-center max-w-4xl">
                 <!-- Subtext with clear contrast color -->
-                <span class="text-amber-400 font-bold tracking-wider uppercase text-sm mb-4 block">Welcome to Your Next Chapter</span>
+                <span class="text-orange-400 font-bold tracking-wider uppercase text-sm mb-4 block">Welcome to Your Next Chapter</span>
                 
                 <!-- H1 centered and equally spaced above/below -->
                 <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
@@ -159,7 +159,7 @@
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <!-- Text aligned center within CTA -->
-                    <a href="bookshop.html" class="w-full sm:w-auto px-8 h-12 flex items-center justify-center bg-amber-600 hover:bg-amber-700 text-white font-medium rounded-md shadow-lg transition-transform hover:-translate-y-1">
+                    <a href="bookshop.html" class="w-full sm:w-auto px-8 h-12 flex items-center justify-center bg-orange-600 hover:bg-orange-700 text-white font-medium rounded-md shadow-lg transition-transform hover:-translate-y-1">
                         Shop Books
                     </a>
                     <a href="menu.html" class="w-full sm:w-auto px-8 h-12 flex items-center justify-center bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm font-medium rounded-md shadow-sm transition-transform hover:-translate-y-1">
@@ -170,7 +170,7 @@
         </section>
 
         <!-- Featured Bestsellers Card Grid -->
-        <section class="py-20 bg-white dark:bg-gray-900">
+        <section class="py-20 bg-white dark:bg-black">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-12">
                     <h2 class="font-heading text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">Featured Bestsellers</h2>
@@ -182,15 +182,15 @@
                     
                     <!-- Book Card 1 -->
                     <!-- Flex flex-col h-full to keep CTAs on same line -->
-                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover-lift flex flex-col h-full border border-gray-200 dark:border-gray-700">
+                    <div class="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover-lift flex flex-col h-full border border-gray-200 dark:border-gray-700">
                         <div class="aspect-[3/4] overflow-hidden bg-gray-200 dark:bg-gray-700 relative">
                             <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=600&auto=format&fit=crop" alt="Book Cover" class="w-full h-full object-cover">
                             <!-- High contrast badging -->
-                            <div class="absolute top-3 left-3 bg-white dark:bg-gray-900 text-xs font-bold px-2 py-1 rounded shadow-sm text-gray-900 dark:text-white">New</div>
+                            <div class="absolute top-3 left-3 bg-white dark:bg-black text-xs font-bold px-2 py-1 rounded shadow-sm text-gray-900 dark:text-white">New</div>
                         </div>
                         <div class="p-6 flex flex-col flex-grow text-center">
                             <!-- Small text with increased contrast -->
-                            <div class="text-xs text-amber-700 dark:text-amber-400 font-bold mb-2 uppercase tracking-wide">Fiction</div>
+                            <div class="text-xs text-orange-700 dark:text-orange-400 font-bold mb-2 uppercase tracking-wide">Fiction</div>
                             <!-- Title -->
                             <h3 class="font-heading text-lg font-bold text-gray-900 dark:text-white mb-1 line-clamp-1">The Midnight Library</h3>
                             <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">Matt Haig</p>
@@ -198,7 +198,7 @@
                             
                             <!-- mt-auto pushes CTA button to the bottom -->
                             <div class="mt-auto">
-                                <a href="bookshop.html" class="flex items-center justify-center w-full px-4 py-2 border border-amber-600 text-amber-600 dark:border-amber-500 dark:text-amber-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-500 dark:hover:text-white font-medium rounded-md transition-colors text-center">
+                                <a href="bookshop.html" class="flex items-center justify-center w-full px-4 py-2 border border-orange-600 text-orange-600 dark:border-orange-500 dark:text-orange-400 hover:bg-orange-600 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white font-medium rounded-md transition-colors text-center">
                                     Add to Cart
                                 </a>
                             </div>
@@ -206,17 +206,17 @@
                     </div>
 
                     <!-- Book Card 2 -->
-                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover-lift flex flex-col h-full border border-gray-200 dark:border-gray-700">
+                    <div class="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover-lift flex flex-col h-full border border-gray-200 dark:border-gray-700">
                         <div class="aspect-[3/4] overflow-hidden bg-gray-200 dark:bg-gray-700">
                             <img src="https://i.pinimg.com/1200x/d0/1b/9f/d01b9f9be1ebbb6f757ca729519a0f4c.jpg" alt="Book Cover" class="w-full h-full object-cover">
                         </div>
                         <div class="p-6 flex flex-col flex-grow text-center">
-                            <div class="text-xs text-amber-700 dark:text-amber-400 font-bold mb-2 uppercase tracking-wide">Non-Fiction</div>
+                            <div class="text-xs text-orange-700 dark:text-orange-400 font-bold mb-2 uppercase tracking-wide">Non-Fiction</div>
                             <h3 class="font-heading text-lg font-bold text-gray-900 dark:text-white mb-1 line-clamp-1">Atomic Habits</h3>
                             <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">James Clear</p>
                             <div class="font-bold text-gray-900 dark:text-white mb-4">$21.00</div>
                             <div class="mt-auto">
-                                <a href="bookshop.html" class="flex items-center justify-center w-full px-4 py-2 border border-amber-600 text-amber-600 dark:border-amber-500 dark:text-amber-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-500 dark:hover:text-white font-medium rounded-md transition-colors text-center">
+                                <a href="bookshop.html" class="flex items-center justify-center w-full px-4 py-2 border border-orange-600 text-orange-600 dark:border-orange-500 dark:text-orange-400 hover:bg-orange-600 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white font-medium rounded-md transition-colors text-center">
                                     Add to Cart
                                 </a>
                             </div>
@@ -224,17 +224,17 @@
                     </div>
 
                     <!-- Book Card 3 -->
-                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover-lift flex flex-col h-full border border-gray-200 dark:border-gray-700">
+                    <div class="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover-lift flex flex-col h-full border border-gray-200 dark:border-gray-700">
                         <div class="aspect-[3/4] overflow-hidden bg-gray-200 dark:bg-gray-700">
                             <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=600&auto=format&fit=crop" alt="Book Cover" class="w-full h-full object-cover">
                         </div>
                         <div class="p-6 flex flex-col flex-grow text-center">
-                            <div class="text-xs text-amber-700 dark:text-amber-400 font-bold mb-2 uppercase tracking-wide">Mystery</div>
+                            <div class="text-xs text-orange-700 dark:text-orange-400 font-bold mb-2 uppercase tracking-wide">Mystery</div>
                             <h3 class="font-heading text-lg font-bold text-gray-900 dark:text-white mb-1 line-clamp-1">The Silent Patient</h3>
                             <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">Alex Michaelides</p>
                             <div class="font-bold text-gray-900 dark:text-white mb-4">$18.50</div>
                             <div class="mt-auto">
-                                <a href="bookshop.html" class="flex items-center justify-center w-full px-4 py-2 border border-amber-600 text-amber-600 dark:border-amber-500 dark:text-amber-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-500 dark:hover:text-white font-medium rounded-md transition-colors text-center">
+                                <a href="bookshop.html" class="flex items-center justify-center w-full px-4 py-2 border border-orange-600 text-orange-600 dark:border-orange-500 dark:text-orange-400 hover:bg-orange-600 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white font-medium rounded-md transition-colors text-center">
                                     Add to Cart
                                 </a>
                             </div>
@@ -242,18 +242,18 @@
                     </div>
 
                     <!-- Book Card 4 -->
-                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover-lift flex flex-col h-full border border-gray-200 dark:border-gray-700">
+                    <div class="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover-lift flex flex-col h-full border border-gray-200 dark:border-gray-700">
                         <div class="aspect-[3/4] overflow-hidden bg-gray-200 dark:bg-gray-700 relative">
                             <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=600&auto=format&fit=crop" alt="Book Cover" class="w-full h-full object-cover">
-                             <div class="absolute top-3 left-3 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded shadow-sm">Bestseller</div>
+                             <div class="absolute top-3 left-3 bg-orange-600 text-white text-xs font-bold px-2 py-1 rounded shadow-sm">Bestseller</div>
                         </div>
                         <div class="p-6 flex flex-col flex-grow text-center">
-                            <div class="text-xs text-amber-700 dark:text-amber-400 font-bold mb-2 uppercase tracking-wide">Sci-Fi</div>
+                            <div class="text-xs text-orange-700 dark:text-orange-400 font-bold mb-2 uppercase tracking-wide">Sci-Fi</div>
                             <h3 class="font-heading text-lg font-bold text-gray-900 dark:text-white mb-1 line-clamp-1">Project Hail Mary</h3>
                             <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">Andy Weir</p>
                             <div class="font-bold text-gray-900 dark:text-white mb-4">$28.00</div>
                             <div class="mt-auto">
-                                <a href="bookshop.html" class="flex items-center justify-center w-full px-4 py-2 border border-amber-600 text-amber-600 dark:border-amber-500 dark:text-amber-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-500 dark:hover:text-white font-medium rounded-md transition-colors text-center">
+                                <a href="bookshop.html" class="flex items-center justify-center w-full px-4 py-2 border border-orange-600 text-orange-600 dark:border-orange-500 dark:text-orange-400 hover:bg-orange-600 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white font-medium rounded-md transition-colors text-center">
                                     Add to Cart
                                 </a>
                             </div>
@@ -264,26 +264,26 @@
         </section>
 
         <!-- Cafe Highlight: Image and text vertically aligned symmetrically -->
-        <section class="py-20 bg-amber-50/50 dark:bg-gray-800 border-t border-amber-100 dark:border-gray-700">
+        <section class="py-20 bg-orange-50/50 dark:bg-gray-900 border-t border-orange-100 dark:border-gray-700">
             <div class="container mx-auto px-4">
                 <div class="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
                     <div class="lg:w-1/2 w-full rounded-2xl overflow-hidden shadow-2xl relative order-2 lg:order-1 hover-lift">
                         <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1000&auto=format&fit=crop" alt="Pour over coffee" class="w-full h-[400px] lg:h-[450px] object-cover hover:scale-105 transition-transform duration-700">
-                        <div class="absolute bottom-6 left-6 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-4 rounded-lg shadow-lg border border-gray-100 dark:border-gray-700">
+                        <div class="absolute bottom-6 left-6 bg-white/90 dark:bg-black/90 backdrop-blur-md p-4 rounded-lg shadow-lg border border-gray-100 dark:border-gray-700">
                             <h4 class="font-heading font-bold text-gray-900 dark:text-white">Autumn Spice Latte</h4>
-                            <p class="text-sm text-amber-600 dark:text-amber-400 font-bold">Seasonal Signature</p>
+                            <p class="text-sm text-orange-600 dark:text-orange-400 font-bold">Seasonal Signature</p>
                         </div>
                     </div>
                     <div class="lg:w-1/2 w-full text-center lg:text-left order-1 lg:order-2 flex flex-col justify-center">
-                        <span class="text-amber-700 dark:text-amber-400 font-bold tracking-wider uppercase text-sm mb-4 block">Our Cafe</span>
+                        <span class="text-orange-700 dark:text-orange-400 font-bold tracking-wider uppercase text-sm mb-4 block">Our Cafe</span>
                         <h2 class="font-heading text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Artisan Coffee Cultivated with Care</h2>
                         <p class="text-gray-700 dark:text-gray-300 text-lg mb-6 leading-relaxed">
                             Our signature blend is roasted locally and brewed to perfection. Whether you need a robust espresso to power through a study session or a comforting tea to pair with a cozy mystery, our baristas have you covered.
                         </p>
                         <ul class="text-left space-y-3 mb-8 text-gray-700 dark:text-gray-300 mx-auto lg:mx-0 max-w-md">
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-600"></i> Fair-trade, organic beans</li>
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-600"></i> Local bakery fresh daily</li>
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-600"></i> Cozy reading nooks</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-orange-600"></i> Fair-trade, organic beans</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-orange-600"></i> Local bakery fresh daily</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-orange-600"></i> Cozy reading nooks</li>
                         </ul>
                         <div class="text-center lg:text-left">
                             <a href="menu.html" class="inline-flex items-center justify-center px-8 h-12 bg-gray-900 hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 text-white font-medium rounded-md shadow-lg transition-transform hover:-translate-y-1">
@@ -301,15 +301,15 @@
             <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M54.627 0l.83.83v58.34h-58.34v-.83l.83-.83h56.68z\' fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"></div>
             
             <div class="container mx-auto px-4 relative z-10 text-center">
-                <span class="text-amber-500 font-bold tracking-wider uppercase text-sm mb-4 block">Events</span>
+                <span class="text-orange-500 font-bold tracking-wider uppercase text-sm mb-4 block">Events</span>
                 <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-6">Join Our Community</h2>
                 <p class="text-gray-300 max-w-2xl mx-auto mb-10 text-lg">
                     From intimate author readings to lively acoustic nights, there's always something happening at Sip & Scroll.
                 </p>
                 
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-2xl overflow-hidden max-w-4xl mx-auto flex flex-col md:flex-row text-left hover-lift">
-                    <div class="md:w-1/3 bg-amber-50 border-b md:border-b-0 md:border-r border-amber-100 dark:bg-gray-700 dark:border-gray-600 p-8 flex flex-col justify-center items-center text-center">
-                        <div class="text-amber-600 dark:text-amber-400 font-bold text-xl mb-1 uppercase tracking-widest">Oct 15</div>
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-2xl overflow-hidden max-w-4xl mx-auto flex flex-col md:flex-row text-left hover-lift">
+                    <div class="md:w-1/3 bg-orange-50 border-b md:border-b-0 md:border-r border-orange-100 dark:bg-gray-700 dark:border-gray-600 p-8 flex flex-col justify-center items-center text-center">
+                        <div class="text-orange-600 dark:text-orange-400 font-bold text-xl mb-1 uppercase tracking-widest">Oct 15</div>
                         <div class="text-gray-600 dark:text-gray-300 text-sm font-semibold uppercase tracking-wider mb-2">Tuesday</div>
                         <div class="text-gray-500 dark:text-gray-400 text-xs font-bold">7:00 PM - 9:00 PM</div>
                     </div>
@@ -318,7 +318,7 @@
                             <h3 class="font-heading text-2xl font-bold text-gray-900 dark:text-white mb-2">Author Q&A: Local Legends</h3>
                             <p class="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">Join us for a cozy evening discussing regional folklore with visiting author Sarah Jenkins. Ticket includes coffee & a signed copy.</p>
                         </div>
-                        <a href="events.html" class="flex-shrink-0 flex items-center justify-center px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-md font-medium transition-colors shadow-md">
+                        <a href="events.html" class="flex-shrink-0 flex items-center justify-center px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-md font-medium transition-colors shadow-md">
                             RSVP Now
                         </a>
                     </div>
@@ -327,23 +327,23 @@
         </section>
 
         <!-- Customer Reviews -> Consistent card colors, layout -->
-        <section class="py-20 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+        <section class="py-20 bg-gray-50 dark:bg-black border-t border-gray-200 dark:border-gray-800">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16">
-                    <span class="text-amber-700 dark:text-amber-400 font-bold tracking-wider uppercase text-sm mb-4 block">Testimonials</span>
+                    <span class="text-orange-700 dark:text-orange-400 font-bold tracking-wider uppercase text-sm mb-4 block">Testimonials</span>
                     <h2 class="font-heading text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">What Our Patrons Say</h2>
                 </div>
                 
                 <!-- Explicit card background color distinctive from the section bg (gray-50 vs white for light mode) -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
                     
-                    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 hover-lift flex flex-col h-full">
-                        <div class="flex text-amber-500 mb-6 text-sm">
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 hover-lift flex flex-col h-full">
+                        <div class="flex text-orange-500 mb-6 text-sm">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <p class="text-gray-700 dark:text-gray-300 italic mb-8 flex-grow leading-relaxed">"The absolute perfect vibe for a Sunday afternoon. I grabbed a matcha latte and got lost in their sci-fi aisle for hours. Highly recommend!"</p>
                         <div class="flex items-center gap-4 mt-auto">
-                            <div class="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center font-bold text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-800/50">M</div>
+                            <div class="w-12 h-12 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center font-bold text-orange-700 dark:text-orange-400 border border-orange-200 dark:border-orange-800/50">M</div>
                             <div>
                                 <h4 class="font-bold text-gray-900 dark:text-white text-sm">Maya R.</h4>
                                 <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider font-semibold">Local Reader</p>
@@ -351,13 +351,13 @@
                         </div>
                     </div>
                     
-                    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 hover-lift flex flex-col h-full">
-                        <div class="flex text-amber-500 mb-6 text-sm">
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 hover-lift flex flex-col h-full">
+                        <div class="flex text-orange-500 mb-6 text-sm">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <p class="text-gray-700 dark:text-gray-300 italic mb-8 flex-grow leading-relaxed">"They sourced a rare out-of-print architecture book for me within a week. The staff really knows their stuff and their espresso is top tier."</p>
                         <div class="flex items-center gap-4 mt-auto">
-                            <div class="w-12 h-12 rounded-full bg-amber-600 flex items-center justify-center font-bold text-white shadow-md">J</div>
+                            <div class="w-12 h-12 rounded-full bg-orange-600 flex items-center justify-center font-bold text-white shadow-md">J</div>
                             <div>
                                 <h4 class="font-bold text-gray-900 dark:text-white text-sm">James T.</h4>
                                 <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider font-semibold">Collector</p>
@@ -365,8 +365,8 @@
                         </div>
                     </div>
 
-                    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 hover-lift flex flex-col h-full">
-                        <div class="flex text-amber-500 mb-6 text-sm">
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 hover-lift flex flex-col h-full">
+                        <div class="flex text-orange-500 mb-6 text-sm">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <p class="text-gray-700 dark:text-gray-300 italic mb-8 flex-grow leading-relaxed">"Sip & Scroll is my go-to remote work spot. Fast wifi, plenty of outlets, and the smell of old books and fresh coffee is unbeatable."</p>
@@ -381,7 +381,7 @@
                 </div>
                 
                 <div class="text-center">
-                    <a href="about.html" class="inline-flex items-center justify-center px-8 h-12 border-2 border-amber-600 text-amber-600 dark:border-amber-500 dark:text-amber-400 font-bold rounded-md hover:bg-amber-600 hover:text-white dark:hover:bg-amber-500 dark:hover:text-white transition-colors uppercase tracking-wider text-sm">
+                    <a href="about.html" class="inline-flex items-center justify-center px-8 h-12 border-2 border-orange-600 text-orange-600 dark:border-orange-500 dark:text-orange-400 font-bold rounded-md hover:bg-orange-600 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white transition-colors uppercase tracking-wider text-sm">
                         Read More Reviews
                     </a>
                 </div>
@@ -390,14 +390,14 @@
     </main>
 
     <!-- Footer - Global -->
-    <footer class="bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-300 pt-16 pb-8 border-t border-gray-200 dark:border-gray-800">
+    <footer class="bg-white dark:bg-black text-gray-600 dark:text-gray-300 pt-16 pb-8 border-t border-gray-200 dark:border-gray-800">
         <div class="container mx-auto px-4 md:px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <!-- Brand Info -->
                 <div>
                     <!-- Logo same font/color as navbar -->
                     <a href="index.html" class="flex items-center gap-2 mb-6 group inline-block">
-                        <i class="fa-solid fa-book-open text-amber-600 text-2xl group-hover:text-amber-700 transition-colors"></i>
+                        <i class="fa-solid fa-book-open text-orange-600 text-2xl group-hover:text-orange-700 transition-colors"></i>
                         <span class="font-heading text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Sip & Scroll</span>
                     </a>
                     <p class="text-gray-500 dark:text-gray-400 mb-6 text-sm leading-relaxed">
@@ -405,10 +405,10 @@
                     </p>
                     <div class="flex space-x-4">
                         <!-- Social Hover Effects explicitly high contrast -->
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-orange-600 hover:text-white dark:hover:bg-orange-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-orange-600 hover:text-white dark:hover:bg-orange-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-orange-600 hover:text-white dark:hover:bg-orange-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-orange-600 hover:text-white dark:hover:bg-orange-600 dark:hover:text-white transition-all transform hover:-translate-y-1"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                 </div>
 
@@ -417,11 +417,11 @@
                     <h4 class="font-heading font-bold text-gray-900 dark:text-white text-lg mb-6">Quick Links</h4>
                     <ul class="space-y-3 text-sm">
                         <!-- Hover color clearly visible config -->
-                        <li><a href="about.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block">Our Story</a></li>
-                        <li><a href="bookshop.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block">Shop Books</a></li>
-                        <li><a href="menu.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block">Cafe Menu</a></li>
-                        <li><a href="events.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block">Upcoming Events</a></li>
-                        <li><a href="services.html" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors inline-block">Space Rental</a></li>
+                        <li><a href="about.html" class="hover:text-orange-600 dark:hover:text-orange-400 font-medium transition-colors inline-block">Our Story</a></li>
+                        <li><a href="bookshop.html" class="hover:text-orange-600 dark:hover:text-orange-400 font-medium transition-colors inline-block">Shop Books</a></li>
+                        <li><a href="menu.html" class="hover:text-orange-600 dark:hover:text-orange-400 font-medium transition-colors inline-block">Cafe Menu</a></li>
+                        <li><a href="events.html" class="hover:text-orange-600 dark:hover:text-orange-400 font-medium transition-colors inline-block">Upcoming Events</a></li>
+                        <li><a href="services.html" class="hover:text-orange-600 dark:hover:text-orange-400 font-medium transition-colors inline-block">Space Rental</a></li>
                     </ul>
                 </div>
 
@@ -430,16 +430,16 @@
                     <h4 class="font-heading font-bold text-gray-900 dark:text-white text-lg mb-6">Visit Us</h4>
                     <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400 font-medium">
                         <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot mt-1 text-amber-600"></i>
+                            <i class="fa-solid fa-location-dot mt-1 text-orange-600"></i>
                             <span>123 Literary Lane<br>Booktown, BK 10012</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-phone text-amber-600"></i>
-                            <a href="tel:5551234567" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">(555) 123-4567</a>
+                            <i class="fa-solid fa-phone text-orange-600"></i>
+                            <a href="tel:5551234567" class="hover:text-orange-600 dark:hover:text-orange-400 transition-colors">(555) 123-4567</a>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-envelope text-amber-600"></i>
-                            <a href="mailto:hello@sipandscroll.com" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">hello@sipandscroll.com</a>
+                            <i class="fa-solid fa-envelope text-orange-600"></i>
+                            <a href="mailto:hello@sipandscroll.com" class="hover:text-orange-600 dark:hover:text-orange-400 transition-colors">hello@sipandscroll.com</a>
                         </li>
                     </ul>
                 </div>
@@ -449,8 +449,8 @@
                     <h4 class="font-heading font-bold text-gray-900 dark:text-white text-lg mb-6">Newsletter</h4>
                     <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 font-medium">Subscribe for event updates, staff picks, and exclusive discounts.</p>
                     <form class="flex flex-col gap-3">
-                        <input type="email" placeholder="Your email address" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md text-gray-900 dark:text-white focus:outline-none focus:border-amber-600 focus:ring-1 focus:ring-amber-600 transition-colors shadow-inner" required>
-                        <button type="submit" class="w-full px-4 h-12 flex items-center justify-center bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-md transition-colors shadow-sm">
+                        <input type="email" placeholder="Your email address" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-md text-gray-900 dark:text-white focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600 transition-colors shadow-inner" required>
+                        <button type="submit" class="w-full px-4 h-12 flex items-center justify-center bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-md transition-colors shadow-sm">
                             Subscribe
                         </button>
                     </form>
@@ -460,8 +460,8 @@
             <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-400 font-medium">
                 <p>&copy; 2026 Sip & Scroll. All rights reserved.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-orange-600 dark:hover:text-orange-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-orange-600 dark:hover:text-orange-400 transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
